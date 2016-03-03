@@ -1,0 +1,29 @@
+
+
+
+<div class="container">
+
+  <div class="text-center">
+
+    <h1>A list of all the restaurants</h1>
+    <%= link_to 'Add restaurant', new_restaurant_path, class: "btn btn-primary"  %>
+
+    <div class="restaurant-list">
+
+      <% @restaurants.each do |restaurant| %>
+      <li><strong>Name:</strong> <%= restaurant.name %></li>
+      <li>Category: <%= restaurant.category %></li>
+      <li>Address: <%= restaurant.address %></li>
+      <li>Phone Number: <%= restaurant.phone_number %></li>
+      <%= link_to 'show', restaurant_path(restaurant), class: "btn btn-primary" %>
+      <%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-primary" %>
+      <%= link_to "Delete", restaurant_path(restaurant), class: "btn btn-danger",
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

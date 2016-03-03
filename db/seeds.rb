@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts 'Going to the seed db with faker'
+
+15.times do
+  Restaurant.create!(name: Faker::Name.name, address: Faker::Address.street_address,phone_number: Faker::PhoneNumber.phone_number, category: "italian")
+end
+
+puts 'faker created 15 random restaurants'
